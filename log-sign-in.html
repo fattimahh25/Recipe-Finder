@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login / Register Slider</title>
+    <link rel="stylesheet" href="log-sign.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>Create Account</h1>
+          <input type="text" placeholder="Name" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <button id="button-reg">Register</button>
+          <div class="social-icons">
+            <span><ion-icon name="logo-instagram"></ion-icon></span>
+            <span><ion-icon name="logo-facebook"></ion-icon></span>
+            <span><ion-icon name="logo-linkedin"></ion-icon></span>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Login</h1>
+          <input id="emaill" type="email" placeholder="Email" />
+          <input id="passwordd" type="password" placeholder="Password" />
+          <div class="options">
+            <a href="#">Forgot password?</a>
+          </div>
+          <button id="button-log">Login</button>
+          <p>or use your account</p>
+          <div class="social-icons">
+            <span><ion-icon name="logo-instagram"></ion-icon></span>
+            <span><ion-icon name="logo-facebook"></ion-icon></span>
+            <span><ion-icon name="logo-linkedin"></ion-icon></span>
+          </div>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected, login with your personal info</p>
+            <button class="ghost" id="signIn">Login</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Start your journey now</h1>
+            <p>
+              If you don’t have an account yet, join us and start your journey.
+            </p>
+            <button class="ghost" id="signUp">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAJleqageqo4Oz5ohWaCE7HH-YsVScU67o",
+        authDomain: "authentication-9b8e5.firebaseapp.com",
+        projectId: "authentication-9b8e5",
+        storageBucket: "authentication-9b8e5.firebasestorage.app",
+        messagingSenderId: "755142878076",
+        appId: "1:755142878076:web:5b50d4114cc35261383af9",
+        measurementId: "G-Z3LQZPET0H",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      const submit = document.getElementById("button-log");
+      submit.addEventListener("click", function (event) {
+        event.preventDefault();
+        // inputs
+        const email = document.getElementById("emaill").value;
+        const password = document.getElementById("passwordd").value;
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed up
+            const user = userCredential.user;
+            // Swal.fire({
+            //   title:"Login in...",
+            //   icon: "success",
+            //   timer: 1500,
+            // });
+            alert("Login in...");
+            window.location.href = "index.html";
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+            // ..
+          });
+      });
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="log-sign-in.js" defer></script>
+  </body>
+</html>

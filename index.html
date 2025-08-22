@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlavorFind - Discover Amazing Recipes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="logo">🍳 FlavorFind</a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+       <a href="log-sign-in.html"> <button class="sign-in-btn">Sign In</button></a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container fade-in">
+        <h1>
+          Discover Your Next
+          <span class="highlight">Favorite Recipe</span>
+        </h1>
+        <p>
+          Explore thousands of delicious recipes from around the world. Find the
+          perfect dish for any occasion.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for recipes, ingredients, or cuisines..."
+            class="search-input"
+          />
+          <button onclick="searchRecipes()" class="search-btn">
+            🔍 Search
+          </button>
+        </div>
+
+        <div class="hero-buttons">
+          <button onclick="surpriseMe()" class="surprise-btn">
+            🎲 Surprise Me!
+          </button>
+          <button class="app-btn">📱 Get App</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="category-section">
+      <div class="container">
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="category-buttons">
+          <button onclick="filterRecipes('all')" class="category-btn active">
+            All Recipes
+          </button>
+          <button onclick="filterRecipes('breakfast')" class="category-btn">
+            🥞 Breakfast
+          </button>
+          <button onclick="filterRecipes('lunch')" class="category-btn">
+            🥗 Lunch
+          </button>
+          <button onclick="filterRecipes('dinner')" class="category-btn">
+            🍝 Dinner
+          </button>
+          <button onclick="filterRecipes('dessert')" class="category-btn">
+            🍰 Dessert
+          </button>
+          <button onclick="filterRecipes('vegetarian')" class="category-btn">
+            🥬 Vegetarian
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Recipes -->
+    <section class="recipes-section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem">
+          <h2 class="section-title">Featured Recipes</h2>
+          <p style="font-size: 1.25rem; color: #6b7280">
+            Hand-picked favorites from our community
+          </p>
+        </div>
+
+        <div id="recipeGrid" class="recipe-grid">
+          <!-- Recipe cards will be populated by JavaScript -->
+        </div>
+
+        <div class="load-more">
+          <button onclick="loadMoreRecipes()" class="load-more-btn">
+            Load More Recipes
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid fade-in">
+          <div>
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Recipes</div>
+          </div>
+          <div>
+            <div class="stat-number">2M+</div>
+            <div class="stat-label">Happy Cooks</div>
+          </div>
+          <div>
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div>
+            <div class="stat-number">4.9★</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Never Miss a Recipe!</h2>
+        <p>Get weekly recipe recommendations delivered to your inbox</p>
+        <div class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="newsletter-input"
+          />
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-title">🍳 FlavorFind</div>
+            <p style="color: #9ca3af">
+              Discover amazing recipes from around the world.
+            </p>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="recipes.html">Recipes</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Follow Us</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem">
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📘 Facebook</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📷 Instagram</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >🐦 Twitter</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 FlavorFind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Global variables
+      let cardsData = [];
+      let currentFilter = "all";
+      let displayedRecipes = 6;
+
+      // Fetch recipe data from JSON file
+      fetch("recipe-data.json")
+        .then(response => response.json())
+        .then(data => {
+          cardsData = data;
+          displayRecipes(cardsData);
+        })
+        .catch(error => {
+          console.error('Error loading recipe data:', error);
+          // Fallback to empty array if JSON fails to load
+          cardsData = [];
+          displayRecipes(cardsData);
+        });
+
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", function () {
+        // displayRecipes will be called after data is loaded
+      });
+
+      // Display recipes
+      function displayRecipes(recipes) {
+        const grid = document.getElementById("recipeGrid");
+        const filteredRecipes =
+          currentFilter === "all"
+            ? recipes
+            : recipes.filter((recipe) => recipe.category === currentFilter);
+
+        const recipesToShow = filteredRecipes.slice(0, displayedRecipes);
+
+        grid.innerHTML = recipesToShow
+          .map(
+            (recipe) => `
+                <div class="recipe-card" onclick="viewRecipe(${recipe.id})">
+                    <div class="recipe-image">
+                        ${recipe.image.startsWith('http') || recipe.image.startsWith('./') ? 
+                          `<img src="${recipe.image}" alt="${recipe.title}" style="width: 100%; height: 100%; object-fit: cover;">` : 
+                          `<span>${recipe.image}</span>`}
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">${recipe.title}</h3>
+                        <p class="recipe-description">${recipe.description}</p>
+                        <div class="recipe-meta">
+                            <span>⏱️ ${recipe.time}</span>
+                            <span>📊 ${recipe.difficulty}</span>
+                            <span>⭐ ${recipe.rating}</span>
+                        </div>
+                        <button class="recipe-btn">
+                            View Recipe
+                        </button>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      // View individual recipe
+      function viewRecipe(id) {
+        // Store recipe ID and redirect to recipe detail page
+        localStorage.setItem("selectedRecipeId", id);
+        window.location.href = "recipe-detail.html";
+      }
+
+      // Filter recipes by category
+      function filterRecipes(category) {
+        currentFilter = category;
+        displayedRecipes = 6;
+
+        // Update active button
+        document.querySelectorAll(".category-btn").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+        event.target.classList.add("active");
+
+        displayRecipes(cardsData);
+      }
+
+      // Search recipes
+      function searchRecipes() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        if (searchTerm.trim() === "") {
+          alert("Please enter a search term!");
+          return;
+        }
+
+        // Store search term and redirect to recipes page
+        localStorage.setItem("searchTerm", searchTerm);
+        window.location.href = "recipes.html";
+      }
+
+      // Load more recipes
+      function loadMoreRecipes() {
+        displayedRecipes += 3;
+        displayRecipes(cardsData);
+      }
+
+      // Surprise Me functionality
+      function surpriseMe() {
+        const surpriseRecipes = [
+          {
+            title: "Exotic Dragon Fruit Smoothie Bowl",
+            cuisine: "Tropical Fusion",
+            time: "10 min",
+            description:
+              "A vibrant pink smoothie bowl topped with coconut flakes and chia seeds",
+            emoji: "🐉🥣",
+          },
+          {
+            title: "Moroccan Spiced Lamb Tagine",
+            cuisine: "North African",
+            time: "2 hours",
+            description:
+              "Slow-cooked lamb with apricots, almonds, and aromatic spices",
+            emoji: "🍖🌶️",
+          },
+          {
+            title: "Japanese Matcha Mochi Ice Cream",
+            cuisine: "Japanese",
+            time: "45 min",
+            description: "Soft mochi wrapped around creamy matcha ice cream",
+            emoji: "🍡🍦",
+          },
+        ];
+
+        const randomRecipe =
+          surpriseRecipes[Math.floor(Math.random() * surpriseRecipes.length)];
+
+        // Create a modal-like alert with recipe details
+        const modal = document.createElement("div");
+        modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+
+        modal.innerHTML = `
+                <div style="background: white; border-radius: 1rem; padding: 2rem; max-width: 28rem; margin: 1rem; text-align: center; animation: bounce 0.5s ease;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">${randomRecipe.emoji}</div>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #1f2937; margin-bottom: 0.5rem;">Surprise Recipe!</h3>
+                    <h4 style="font-size: 1.25rem; font-weight: 600; color: #7c3aed; margin-bottom: 0.5rem;">${randomRecipe.title}</h4>
+                    <p style="color: #6b7280; margin-bottom: 0.5rem;">${randomRecipe.cuisine} • ${randomRecipe.time}</p>
+                    <p style="color: #374151; margin-bottom: 1.5rem;">${randomRecipe.description}</p>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" style="flex: 1; background: #e5e7eb; color: #374151; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer;">
+                            Try Again
+                        </button>
+                        <button onclick="alert('Taking you to the full recipe! 👨‍🍳'); this.parentElement.parentElement.parentElement.remove();" style="flex: 1; background: #7c3aed; color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer;">
+                            Cook This!
+                        </button>
+                    </div>
+                </div>
+            `;
+
+        document.body.appendChild(modal);
+
+        // Remove modal when clicking outside
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.remove();
+          }
+        });
+      }
+
+      // Handle search on Enter key
+      document
+        .getElementById("searchInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            searchRecipes();
+          }
+        });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'96ad130194ab8e3a',t:'MTc1NDQ2Nzk5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

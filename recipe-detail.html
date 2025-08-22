@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details - FlavorFind</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Main Content */
+        .main-section {
+            padding: 2rem 0;
+            background: #f9fafb;
+        }
+        
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .back-btn {
+            display: flex;
+            align-items: center;
+            color: #7c3aed;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: #6d28d9;
+        }
+        
+        /* Recipe Card */
+        .recipe-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .recipe-hero {
+            height: 16rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .recipe-content {
+            padding: 2rem;
+        }
+        
+        .recipe-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .recipe-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .recipe-description {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .recipe-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .tag {
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px;
+        }
+        
+        .tag-time {
+            background: #ddd6fe;
+            color: #7c3aed;
+        }
+        
+        .tag-difficulty {
+            background: #dbeafe;
+            color: #3b82f6;
+        }
+        
+        .tag-rating {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .tag-servings {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        /* Recipe Details Grid */
+        .recipe-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .instructions-section {
+            background: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .instruction-step {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            transition: background-color 0.3s ease;
+        }
+        
+        .instruction-step:hover {
+            background: #fef3c7;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #7c3aed;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .step-text {
+            color: #374151;
+        }
+        
+        /* Sidebar */
+        
+        .ingredients-card,
+        .nutrition-card {
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .ingredient-item:hover {
+            background: #f3f4f6;
+            transform: translateX(5px);
+        }
+        
+        .ingredient-bullet {
+            color: #7c3aed;
+            font-weight: bold;
+        }
+        
+        .ingredient-text {
+            color: #374151;
+        }
+        
+        /* Nutrition Grid */
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        
+        .nutrition-item {
+            text-align: center;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 0.25rem;
+        }
+        
+        .nutrition-value {
+            font-weight: bold;
+            color: #7c3aed;
+        }
+        
+        .nutrition-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #7c3aed;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #6d28d9;
+        }
+        
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🍳 FlavorFind</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="sign-in-btn">Sign In</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-btn">
+                ← Back to Recipes
+            </a>
+            
+            <div id="recipeContent" class="recipe-card">
+                <!-- Recipe content will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">🍳 FlavorFind</div>
+                    <p style="color: #9ca3af;">Discover amazing recipes from around the world.</p>
+                </div>
+                <div>
+                    <h3 class="footer-subtitle">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-subtitle">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-subtitle">Follow Us</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#" style="color: #9ca3af; text-decoration: none;">📘 Facebook</a>
+                        <a href="#" style="color: #9ca3af; text-decoration: none;">📷 Instagram</a>
+                        <a href="#" style="color: #9ca3af; text-decoration: none;">🐦 Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FlavorFind. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variable to store recipe data
+        let cardsData = [];
+
+        // Fetch recipe data from JSON file
+        fetch("recipe-data.json")
+            .then(response => response.json())
+            .then(data => {
+                cardsData = data;
+                initializePage();
+            })
+            .catch(error => {
+                console.error('Error loading recipe data:', error);
+                // Redirect to recipes page if data can't be loaded
+                window.location.href = 'recipes.html';
+            });
+
+        // Initialize the page after data is loaded
+        function initializePage() {
+            const recipeId = localStorage.getItem('selectedRecipeId');
+            if (recipeId) {
+                displayRecipe(parseInt(recipeId));
+            } else {
+                // Redirect to recipes page if no recipe selected
+                window.location.href = 'recipes.html';
+            }
+        }
+
+        // Display recipe details
+        function displayRecipe(id) {
+            const recipe = cardsData.find(r => r.id === id);
+            if (!recipe) {
+                window.location.href = 'recipes.html';
+                return;
+            }
+
+            const content = document.getElementById('recipeContent');
+            content.innerHTML = `
+                <div class="recipe-hero">
+                    ${recipe.image.startsWith('http') || recipe.image.startsWith('./') ? 
+                      `<img src="${recipe.image}" alt="${recipe.title}" style="width: 100%; height: 100%; object-fit: cover;">` : 
+                      `<div>${recipe.image}</div>`}
+                </div>
+                
+                <div class="recipe-content">
+                    <div class="recipe-header">
+                        <h1 class="recipe-title">${recipe.title}</h1>
+                        <p class="recipe-description">${recipe.description}</p>
+                        
+                        <div class="recipe-tags">
+                            <span class="tag tag-time">⏱️ ${recipe.time}</span>
+                            <span class="tag tag-difficulty">📊 ${recipe.difficulty}</span>
+                            <span class="tag tag-rating">⭐ ${recipe.rating}</span>
+                            <span class="tag tag-servings">👥 ${recipe.servings} servings</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-details">
+                        <div class="instructions-section">
+                            <h2 class="section-title">Instructions</h2>
+                            <div>
+                                ${recipe.instructions.map((step, index) => `
+                                    <div class="instruction-step">
+                                        <div class="step-number">${index + 1}</div>
+                                        <p class="step-text">${step}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar">
+                            <h2 class="section-title">Ingredients</h2>
+                            <div class="ingredients-card">
+                                ${recipe.ingredients.map(ingredient => `
+                                    <div class="ingredient-item">
+                                        <span class="ingredient-bullet">•</span>
+                                        <span class="ingredient-text">${ingredient}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            
+                            <h3 class="section-title">Nutrition (per serving)</h3>
+                            <div class="nutrition-card">
+                                <div class="nutrition-grid">
+                                    <div class="nutrition-item">
+                                        <div class="nutrition-value">${recipe.nutrition.calories}</div>
+                                        <div class="nutrition-label">Calories</div>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <div class="nutrition-value">${recipe.nutrition.protein}</div>
+                                        <div class="nutrition-label">Protein</div>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <div class="nutrition-value">${recipe.nutrition.carbs}</div>
+                                        <div class="nutrition-label">Carbs</div>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <div class="nutrition-value">${recipe.nutrition.fat}</div>
+                                        <div class="nutrition-label">Fat</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="action-buttons">
+                                <button class="btn btn-primary" onclick="startCooking()">
+                                    🍳 Start Cooking
+                                </button>
+                                <button class="btn btn-secondary" onclick="saveRecipe()">
+                                    💾 Save Recipe
+                                </button>
+                                <button class="btn btn-secondary" onclick="shareRecipe()">
+                                    📤 Share Recipe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Action functions
+        function startCooking() {
+            alert('Happy cooking! 👨‍🍳 Enjoy making this delicious recipe!');
+        }
+
+        function saveRecipe() {
+            alert('Recipe saved to your favorites! ❤️');
+        }
+
+        function shareRecipe() {
+            alert('Recipe link copied to clipboard! 📋 Share it with your friends!');
+        }
+    </script>
+</body>
+</html>
