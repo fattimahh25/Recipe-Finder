@@ -17,7 +17,22 @@
           <li><a href="categories.html">Categories</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
+    <!-- Actions -->
+    <div class="nav-actions">
        <a href="log-sign-in.html"> <button class="sign-in-btn">Sign In</button></a>
+      <!-- Mobile Menu Icon -->
+      <button class="menu-icon" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <ul class="mobile-menu" id="mobileMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
       </div>
     </nav>
 
@@ -194,6 +209,10 @@
     </footer>
 
     <script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
       // Global variables
       let cardsData = [];
       let currentFilter = "all";

@@ -70,6 +70,66 @@ nav {
 .sign-in-btn:hover {
   background: #6d28d9;
 }
+
+/* Mobile menu toggle button */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  margin-left: 1rem;
+}
+
+/* Mobile dropdown */
+.mobile-menu {
+  display: none;
+  text-decoration: none;
+  flex-direction: column;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  position: absolute;
+  top: 60px; /* height of navbar */
+  right: 0;
+  width: 30%;
+  z-index: 1000;
+}
+.mobile-menu, li{
+  list-style: none;
+}
+
+.mobile-menu li {
+  margin: 0.75rem 0;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.mobile-menu a:hover {
+  color: #7c3aed;
+}
+
+/* Responsive (mobile view) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide desktop nav links */
+  }
+  .menu-icon {
+    display: block; /* show hamburger */
+  }
+  
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
 /* navigation */
 /* index.html */
 /* Hero Section */

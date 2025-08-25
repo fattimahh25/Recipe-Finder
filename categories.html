@@ -1,393 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Categories - FlavorFind</title>
-    <style>        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9fafb;
-            line-height: 1.6;
-        }
-        
-        /* Navigation Styles */
-        nav {
-            background: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 64px;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #7c3aed;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f9fafb;
+        line-height: 1.6;
+      }
+
+      /* Navigation Styles */
+      nav {
+        background: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #7c3aed;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #374151;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #7c3aed;
+        font-weight: 600;
+      }
+
+      .sign-in-btn {
+        background: #7c3aed;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .sign-in-btn:hover {
+        background: #6d28d9;
+      }
+
+      /* Main Content */
+      .main-section {
+        padding: 4rem 0;
+        background: #f9fafb;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.25rem;
+        color: #6b7280;
+      }
+
+      /* Category Grid */
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .category-card {
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .category-card:hover {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+      }
+
+      .category-image {
+        height: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+      }
+
+      .breakfast-bg {
+        background-image: url(./images/Break-fast.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .lunch-bg {
+        background-image: url(./images/Lunch.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .dinner-bg {
+        background-image: url(./images/Dinner.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .dessert-bg {
+        background-image: url(./images/Dessert.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .vegetarian-bg {
+        background-image: url(./images/Vegetarian.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .international-bg {
+        background-image: url(./images/International.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .category-content {
+        padding: 1.5rem;
+      }
+
+      .category-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #1f2937;
+      }
+
+      .category-description {
+        color: #6b7280;
+        margin-bottom: 1rem;
+      }
+
+      .category-count {
+        color: #7c3aed;
+        font-weight: 600;
+      }
+
+      /* Footer */
+      footer {
+        background: #1f2937;
+        color: white;
+        padding: 3rem 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .footer-subtitle {
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #374151;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        text-align: center;
+        color: #9ca3af;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+          display: none;
         }
-        
-        .nav-links a {
-            color: #374151;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #7c3aed;
-            font-weight: 600;
-        }
-        
-        .sign-in-btn {
-            background: #7c3aed;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .sign-in-btn:hover {
-            background: #6d28d9;
-        }
-        
-        /* Main Content */
-        .main-section {
-            padding: 4rem 0;
-            background: #f9fafb;
-        }
-        
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
+
         .page-title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #1f2937;
-            margin-bottom: 1rem;
+          font-size: 2rem;
         }
-        
-        .page-subtitle {
-            font-size: 1.25rem;
-            color: #6b7280;
-        }
-        
-        /* Category Grid */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .category-card {
-            background: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .category-card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
-        }
-        
-        .category-image {
-            height: 12rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-        }
-        
-        .breakfast-bg {
-            background-image: url(./images/Break-fast.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .lunch-bg {
-            background-image: url(./images/Lunch.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .dinner-bg {
-            background-image: url(./images/Dinner.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .dessert-bg {
-            background-image: url(./images/Dessert.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .vegetarian-bg {
-            background-image: url(./images/Vegetarian.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .international-bg {
-            background-image: url(./images/International.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .category-content {
-            padding: 1.5rem;
-        }
-        
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #1f2937;
-        }
-        
-        .category-description {
-            color: #6b7280;
-            margin-bottom: 1rem;
-        }
-        
-        .category-count {
-            color: #7c3aed;
-            font-weight: 600;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1f2937;
-            color: white;
-            padding: 3rem 0;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-subtitle {
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            text-align: center;
-            color: #9ca3af;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .page-title {
-                font-size: 2rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">🍳 FlavorFind</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="categories.html" class="active">Categories</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <button class="sign-in-btn">Sign In</button>
+      <div class="nav-container">
+        <a href="index.html" class="logo">🍳 FlavorFind</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="categories.html" class="active">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="log-sign-in.html">
+            <button class="sign-in-btn">Sign In</button></a
+          >
+          <!-- Mobile Menu Icon -->
+          <button class="menu-icon" onclick="toggleMenu()">☰</button>
         </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <section class="main-section">
-        <div class="container">
-            <div class="page-header">
-                <h1 class="page-title">Recipe Categories</h1>
-                <p class="page-subtitle">Explore recipes by category and cuisine type</p>
-            </div>
-            
-            <div class="category-grid">
-                <div class="category-card" onclick="filterByCategory('breakfast')">
-                    <div class="category-image breakfast-bg">
-                        
-                    </div>
-                    <div class="category-content">
-                        <h3 class="category-title">Breakfast</h3>
-                        <p class="category-description">Start your day with delicious morning meals</p>
-                        <div class="category-count">156 Recipes</div>
-                    </div>
-                </div>
-                
-                <div class="category-card" onclick="filterByCategory('lunch')">
-                    <div class="category-image lunch-bg">
-                    </div>
-                    <div class="category-content">
-                        <h3 class="category-title">Lunch</h3>
-                        <p class="category-description">Perfect midday meals and light dishes</p>
-                        <div class="category-count">243 Recipes</div>
-                    </div>
-                </div>
-                
-                <div class="category-card" onclick="filterByCategory('dinner')">
-                    <div class="category-image dinner-bg">
-                    </div>
-                    <div class="category-content">
-                        <h3 class="category-title">Dinner</h3>
-                        <p class="category-description">Hearty evening meals for the whole family</p>
-                        <div class="category-count">387 Recipes</div>
-                    </div>
-                </div>
-                
-                <div class="category-card" onclick="filterByCategory('dessert')">
-                    <div class="category-image dessert-bg">
-                    </div>
-                    <div class="category-content">
-                        <h3 class="category-title">Desserts</h3>
-                        <p class="category-description">Sweet treats and indulgent desserts</p>
-                        <div class="category-count">198 Recipes</div>
-                    </div>
-                </div>
-                
-                <div class="category-card" onclick="filterByCategory('vegetarian')">
-                    <div class="category-image vegetarian-bg">
-                    </div>
-                    <div class="category-content">
-                        <h3 class="category-title">Vegetarian</h3>
-                        <p class="category-description">Plant-based meals full of flavor</p>
-                        <div class="category-count">289 Recipes</div>
-                    </div>
-                </div>
-                
-                <div class="category-card" onclick="filterByCategory('international')">
-                    <div class="category-image international-bg">
-                    </div>
-                    <div class="category-content">
-                        <h3 class="category-title">International</h3>
-                        <p class="category-description">Flavors from around the world</p>
-                        <div class="category-count">412 Recipes</div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="page-header">
+          <h1 class="page-title">Recipe Categories</h1>
+          <p class="page-subtitle">
+            Explore recipes by category and cuisine type
+          </p>
         </div>
+
+        <div class="category-grid">
+          <div class="category-card" onclick="filterByCategory('breakfast')">
+            <div class="category-image breakfast-bg"></div>
+            <div class="category-content">
+              <h3 class="category-title">Breakfast</h3>
+              <p class="category-description">
+                Start your day with delicious morning meals
+              </p>
+              <div class="category-count">156 Recipes</div>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterByCategory('lunch')">
+            <div class="category-image lunch-bg"></div>
+            <div class="category-content">
+              <h3 class="category-title">Lunch</h3>
+              <p class="category-description">
+                Perfect midday meals and light dishes
+              </p>
+              <div class="category-count">243 Recipes</div>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterByCategory('dinner')">
+            <div class="category-image dinner-bg"></div>
+            <div class="category-content">
+              <h3 class="category-title">Dinner</h3>
+              <p class="category-description">
+                Hearty evening meals for the whole family
+              </p>
+              <div class="category-count">387 Recipes</div>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterByCategory('dessert')">
+            <div class="category-image dessert-bg"></div>
+            <div class="category-content">
+              <h3 class="category-title">Desserts</h3>
+              <p class="category-description">
+                Sweet treats and indulgent desserts
+              </p>
+              <div class="category-count">198 Recipes</div>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterByCategory('vegetarian')">
+            <div class="category-image vegetarian-bg"></div>
+            <div class="category-content">
+              <h3 class="category-title">Vegetarian</h3>
+              <p class="category-description">
+                Plant-based meals full of flavor
+              </p>
+              <div class="category-count">289 Recipes</div>
+            </div>
+          </div>
+
+          <div
+            class="category-card"
+            onclick="filterByCategory('international')"
+          >
+            <div class="category-image international-bg"></div>
+            <div class="category-content">
+              <h3 class="category-title">International</h3>
+              <p class="category-description">Flavors from around the world</p>
+              <div class="category-count">412 Recipes</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-title">🍳 FlavorFind</div>
-                    <p style="color: #9ca3af;">Discover amazing recipes from around the world.</p>
-                </div>
-                <div>
-                    <h3 class="footer-subtitle">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="recipes.html">Recipes</a></li>
-                        <li><a href="categories.html">Categories</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-subtitle">Support</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-subtitle">Follow Us</h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="#" style="color: #9ca3af; text-decoration: none;">📘 Facebook</a>
-                        <a href="#" style="color: #9ca3af; text-decoration: none;">📷 Instagram</a>
-                        <a href="#" style="color: #9ca3af; text-decoration: none;">🐦 Twitter</a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-title">🍳 FlavorFind</div>
+            <p style="color: #9ca3af">
+              Discover amazing recipes from around the world.
+            </p>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="recipes.html">Recipes</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Follow Us</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem">
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📘 Facebook</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📷 Instagram</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >🐦 Twitter</a
+              >
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 FlavorFind. All rights reserved.</p>
-            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 FlavorFind. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Filter by category and redirect to recipes page
-        function filterByCategory(category) {
-            localStorage.setItem('categoryFilter', category);
-            window.location.href = 'recipes.html';
-        }
+      // Filter by category and redirect to recipes page
+      function filterByCategory(category) {
+        localStorage.setItem("categoryFilter", category);
+        window.location.href = "recipes.html";
+      }
     </script>
-</body>
+  </body>
 </html>
