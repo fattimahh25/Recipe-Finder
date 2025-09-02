@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7c3aed;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #374151;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.sign-in-btn {
+  background: #7c3aed;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background: #6d28d9;
+}
+.main-section {
+  padding: 2rem 0;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  color: #7c3aed;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #6d28d9;
+}
+
+/* Recipe Card */
+.recipe-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.recipe-hero {
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.recipe-content {
+  padding: 2rem;
+}
+
+.recipe-header {
+  margin-bottom: 1.5rem;
+}
+
+.recipe-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-description {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.recipe-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.tag {
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.tag-time {
+  background: #ddd6fe;
+  color: #7c3aed;
+}
+
+.tag-difficulty {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+.tag-rating {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.tag-servings {
+  background: #d1fae5;
+  color: #059669;
+}
+
+/* Recipe Details Grid */
+.recipe-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.instructions-section {
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.instruction-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease;
+}
+
+.instruction-step:hover {
+  background: #fef3c7;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  background: #7c3aed;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step-text {
+  color: #374151;
+}
+
+/* Sidebar */
+
+.ingredients-card,
+.nutrition-card {
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.ingredient-item:hover {
+  background: #f3f4f6;
+  transform: translateX(5px);
+}
+
+.ingredient-bullet {
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+.ingredient-text {
+  color: #374151;
+}
+
+/* Nutrition Grid */
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.nutrition-item {
+  text-align: center;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 0.25rem;
+}
+
+.nutrition-value {
+  font-weight: bold;
+  color: #7c3aed;
+}
+
+.nutrition-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #7c3aed;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #6d28d9;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+/* Footer */
+footer {
+  background: #1f2937;
+  color: white;
+  padding: 3rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-subtitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+  color: #9ca3af;
+}
+/* Responsive CSS */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .recipe-details {
+    grid-template-columns: 1fr; /* Stack instructions and sidebar */
+  }
+
+  .recipe-title {
+    font-size: 2rem;
+  }
+
+  .recipe-description {
+    font-size: 1.1rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation */
+  nav .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* hide menu by default */
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-container.active .nav-links {
+    display: flex;
+  }
+
+  .sign-in-btn {
+    margin-top: 0.5rem;
+  }
+
+  .recipe-title {
+    font-size: 1.75rem;
+  }
+
+  .recipe-hero {
+    height: 12rem;
+    font-size: 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-title {
+    font-size: 1.5rem;
+  }
+
+  .recipe-description {
+    font-size: 1rem;
+  }
+
+  .recipe-hero {
+    height: 10rem;
+    font-size: 2rem;
+  }
+
+  .recipe-tags {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .instruction-step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nutrition-grid {
+    grid-template-columns: 1fr; /* stack nutrition items */
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+}
+   /* Mobile dropdown */
+      .menu-icon {
+        display: none;
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #374151;
+        margin-left: 1rem;
+      }
+      .mobile-menu {
+        display: none;
+        text-decoration: none;
+        flex-direction: column;
+        background: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        padding: 1rem;
+        position: absolute;
+        top: 60px; /* height of navbar */
+        right: 0;
+        width: 30%;
+        z-index: 1000;
+      }
+      .mobile-menu,
+      li {
+        list-style: none;
+      }
+
+      .mobile-menu li {
+        margin: 0.75rem 0;
+      }
+      .mobile-menu a {
+        text-decoration: none;
+        color: #374151;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .mobile-menu a:hover {
+        color: #7c3aed;
+      }
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* hide desktop nav links */
+        }
+        .menu-icon {
+          display: block; /* show hamburger */
+        }
+        .page-title {
+          font-size: 2rem;
+        }
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+      }

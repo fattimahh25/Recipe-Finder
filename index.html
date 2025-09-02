@@ -10,30 +10,32 @@
     <!-- Navigation -->
     <nav>
       <div class="nav-container">
-        <a href="index.html" class="logo">🍳 FlavorFind</a>
+        <a href="./index.html" class="logo">🍳 FlavorFind</a>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="./index.html" class="active">Home</a></li>
+          <li><a href="./pages/recipes.html">Recipes</a></li>
+          <li><a href="./pages/categories.html">Categories</a></li>
+          <li><a href="./pages/about.html">About</a></li>
+          <li><a href="./pages/contact.html">Contact</a></li>
         </ul>
-    <!-- Actions -->
-    <div class="nav-actions">
-       <a href="log-sign-in.html"> <button class="sign-in-btn">Sign In</button></a>
-      <!-- Mobile Menu Icon -->
-      <button class="menu-icon" onclick="toggleMenu()">☰</button>
-    </div>
-  </div>
-
-  <!-- Mobile Dropdown Menu -->
-  <ul class="mobile-menu" id="mobileMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-
+        <!-- Actions -->
+        <div class="nav-actions">
+          <a href="./pages/log-sign-in.html">
+            <button class="sign-in-btn">Sign In</button></a
+          >
+          <!-- Mobile Menu Icon -->
+          <button class="menu-icon" onclick="toggleMenu()">☰</button>
+        </div>
       </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <li><a href="./pages/recipes.html">Recipe</a></li>
+        <li><a href="./pages/categories.html">Categories</a></li>
+        <li><a href="./pages/contact.html">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- Hero Section -->
@@ -172,10 +174,10 @@
           <div>
             <h3 class="footer-subtitle">Quick Links</h3>
             <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="recipes.html">Recipes</a></li>
-              <li><a href="categories.html">Categories</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./pages/recipes.html">Recipes</a></li>
+              <li><a href="./pages/categories.html">Categories</a></li>
+              <li><a href="./pages/about.html">About</a></li>
             </ul>
           </div>
           <div>
@@ -209,10 +211,10 @@
     </footer>
 
     <script>
-  function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  }
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
       // Global variables
       let cardsData = [];
       let currentFilter = "all";
@@ -220,13 +222,13 @@
 
       // Fetch recipe data from JSON file
       fetch("recipe-data.json")
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           cardsData = data;
           displayRecipes(cardsData);
         })
-        .catch(error => {
-          console.error('Error loading recipe data:', error);
+        .catch((error) => {
+          console.error("Error loading recipe data:", error);
           // Fallback to empty array if JSON fails to load
           cardsData = [];
           displayRecipes(cardsData);
@@ -252,9 +254,8 @@
             (recipe) => `
                 <div class="recipe-card" onclick="viewRecipe(${recipe.id})">
                     <div class="recipe-image">
-                        ${recipe.image.startsWith('http') || recipe.image.startsWith('./') ? 
-                          `<img src="${recipe.image}" alt="${recipe.title}" style="width: 100%; height: 100%; object-fit: cover;">` : 
-                          `<span>${recipe.image}</span>`}
+<img src="${recipe.image}" alt="${recipe.title}" 
+     style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="recipe-content">
                         <h3 class="recipe-title">${recipe.title}</h3>
@@ -278,7 +279,7 @@
       function viewRecipe(id) {
         // Store recipe ID and redirect to recipe detail page
         localStorage.setItem("selectedRecipeId", id);
-        window.location.href = "recipe-detail.html";
+        window.location.href = "./pages/recipe-detail.html";
       }
 
       // Filter recipes by category

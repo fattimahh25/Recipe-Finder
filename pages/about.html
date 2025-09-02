@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - FlavorFind</title>
+    <link rel="stylesheet" href="./about.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="logo">🍳 FlavorFind</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./recipes.html">Recipes</a></li>
+          <li><a href="./categories.html">Categories</a></li>
+          <li><a href="./about.html" class="active">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="log-sign-in.html">
+            <button class="sign-in-btn">Sign In</button></a
+          >
+          <!-- Mobile Menu Icon -->
+          <button class="menu-icon" onclick="toggleMenu()">☰</button>
+        </div>
+      </div>
+      <!-- Mobile Dropdown Menu -->
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="recipes.html">Recipe</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-section">
+      <div class="container">
+        <div class="page-header">
+          <h1 class="page-title">About FlavorFind</h1>
+          <p class="page-subtitle">Your culinary journey starts here</p>
+        </div>
+
+        <div class="content-card">
+          <h2 class="card-title">Our Story</h2>
+          <p class="card-text">
+            FlavorFind was born from a simple idea: everyone deserves access to
+            amazing recipes from around the world. Founded in 2020 by a team of
+            passionate food lovers and tech enthusiasts, we've grown into a
+            community of over 2 million home cooks sharing their favorite
+            dishes.
+          </p>
+          <p class="card-text">
+            Our mission is to make cooking accessible, enjoyable, and inspiring
+            for everyone. Whether you're a beginner looking for simple weeknight
+            dinners or an experienced chef seeking new challenges, FlavorFind
+            has something for you.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">🎯</div>
+            <h3 class="info-title">Our Mission</h3>
+            <p class="info-text">
+              To democratize cooking by providing easy access to diverse, tested
+              recipes from cultures around the world.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">👥</div>
+            <h3 class="info-title">Our Community</h3>
+            <p class="info-text">
+              A vibrant community of home cooks, professional chefs, and food
+              enthusiasts sharing their passion for cooking.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2 class="card-title">Meet Our Team</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="team-avatar chef-bg"></div>
+              <h4 class="team-name">Hussain</h4>
+              <p class="team-role">Head of Recipe Development</p>
+            </div>
+
+            <div class="team-member">
+              <div class="team-avatar dev-bg"></div>
+              <h4 class="team-name">Fatima</h4>
+              <p class="team-role">Lead Developer</p>
+            </div>
+
+            <div class="team-member">
+              <div class="team-avatar manager-bg"></div>
+              <h4 class="team-name">Ahmed</h4>
+              <p class="team-role">Community Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-title">🍳 FlavorFind</div>
+            <p style="color: #9ca3af">
+              Discover amazing recipes from around the world.
+            </p>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../pages/recipes.html">Recipes</a></li>
+              <li><a href="../pages/categories.html">Categories</a></li>
+              <li><a href="../pages/about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Follow Us</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem">
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📘 Facebook</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📷 Instagram</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >🐦 Twitter</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 FlavorFind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+  </body>
+</html>

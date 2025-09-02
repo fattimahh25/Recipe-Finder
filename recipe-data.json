@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Classic Spaghetti Carbonara",
+    "title": "Classic Spaghetti",
     "category": "dinner",
     "time": "25 min",
     "difficulty": "Easy",
     "rating": 4.8,
-    "image": "./images/spegheti.jpg",
+    "image": "../images/spegheti.jpg",
     "description": "Creamy Italian pasta with eggs, cheese, and pancetta",
     "servings": 4,
     "ingredients": [
@@ -42,7 +42,7 @@
     "time": "15 min",
     "difficulty": "Easy",
     "rating": 4.9,
-    "image": "./images/pancakes.jpg",
+    "image": "../images/pancakes.jpg",
     "description": "Light and fluffy breakfast pancakes with maple syrup",
     "servings": 4,
     "ingredients": [
@@ -81,7 +81,7 @@
   "time": "10 min",
   "difficulty": "Easy",
   "rating": 4.6,
-  "image": "./images/CaesarSalad.jpg",
+  "image": "../images/CaesarSalad.jpg",
   "description": "Fresh romaine lettuce with classic Caesar dressing",
   "servings": 2,
   "ingredients": [
@@ -113,7 +113,7 @@
   "time": "30 min",
   "difficulty": "Easy",
   "rating": 4.9,
-  "image": "./images/cookies.jpg",
+  "image": "../images/cookies.jpg",
   "description": "Soft and chewy cookies with chocolate chips",
   "servings": 24,
   "ingredients": [
@@ -152,7 +152,7 @@
   "time": "20 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/veg-fry.jpg",
+  "image": "../images/veg-fry.jpg",
   "description": "Colorful mix of fresh vegetables in savory sauce",
   "servings": 4,
   "ingredients": [
@@ -192,7 +192,7 @@
   "time": "35 min",
   "difficulty": "Medium",
   "rating": 4.8,
-  "image": "./images/Grilled-Salmon.jpg",
+  "image": "../images/Grilled-Salmon.jpg",
   "description": "Perfectly grilled salmon with herbs and lemon",
   "servings": 4,
   "ingredients": [
@@ -228,7 +228,7 @@
   "time": "20 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/French-Toast.jpg",
+  "image": "../images/French-Toast.jpg",
   "description": "Golden crispy French toast with cinnamon",
   "servings": 4,
   "ingredients": [
@@ -262,7 +262,7 @@
   "time": "45 min",
   "difficulty": "Medium",
   "rating": 4.9,
-  "image": "./images/chicken-tikka-masala.jpg",
+  "image": "../images/chicken-tikka-masala.jpg",
   "description": "Creamy Indian curry with tender chicken pieces",
   "servings": 4,
   "ingredients": [
@@ -307,7 +307,7 @@
   "time": "15 min",
   "difficulty": "Easy",
   "rating": 4.5,
-  "image": "./images/Greek-Salad.jpg",
+  "image": "../images/Greek-Salad.jpg",
   "description": "Fresh Mediterranean salad with feta and olives",
   "servings": 4,
   "ingredients": [
@@ -342,7 +342,7 @@
   "time": "4 hours",
   "difficulty": "Medium",
   "rating": 4.8,
-  "image": "./images/tiramisu.jpg",
+  "image": "../images/tiramisu.jpg",
   "description": "Classic Italian dessert with coffee and mascarpone",
   "servings": 8,
   "ingredients": [
@@ -384,7 +384,7 @@
   "time": "30 min",
   "difficulty": "Easy",
   "rating": 4.6,
-  "image": "./images/quinoa-buddha-bowl.jpg",
+  "image": "../images/quinoa-buddha-bowl.jpg",
   "description": "Nutritious bowl with quinoa, vegetables, and tahini dressing",
   "servings": 2,
   "ingredients": [
@@ -421,7 +421,7 @@
   "time": "25 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/beef-tacos.jpg",
+  "image": "../images/beef-tacos.jpg",
   "description": "Seasoned ground beef tacos with fresh toppings",
   "servings": 4,
   "ingredients": [
@@ -461,7 +461,7 @@
   "time": "30 min",
   "difficulty": "Medium",
   "rating": 4.9,
-  "image": "./images/margherita-pizza.jpg",
+  "image": "../images/margherita-pizza.jpg",
   "description": "Classic Italian pizza with fresh mozzarella, tomatoes, and basil",
   "servings": 4,
   "ingredients": [
@@ -495,7 +495,7 @@
   "time": "10 min",
   "difficulty": "Easy",
   "rating": 4.8,
-  "image": "./images/avocado-toast.jpg",
+  "image": "../images/avocado-toast.jpg",
   "description": "Crispy toast topped with creamy avocado and seasoning",
   "servings": 2,
   "ingredients": [
@@ -526,7 +526,7 @@
   "time": "40 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/Lentil-Soup.jpg",
+  "image": "../images/Lentil-Soup.jpg",
   "description": "Hearty and nutritious lentil soup with vegetables",
   "servings": 4,
   "ingredients": [
@@ -562,7 +562,7 @@
   "time": "20 min",
   "difficulty": "Easy",
   "rating": 4.9,
-  "image": "./images/Blueberry-Pancakes.jpg",
+  "image": "../images/Blueberry-Pancakes.jpg",
   "description": "Fluffy pancakes with fresh blueberries and maple syrup",
   "servings": 4,
   "ingredients": [
@@ -600,7 +600,7 @@
   "time": "15 min",
   "difficulty": "Easy",
   "rating": 4.8,
-  "image": "./images/Avacado-Toast-Egg.jpg",
+  "image": "../images/Avacado-Toast-Egg.jpg",
   "description": "Crispy toast topped with creamy avocado and a fried egg",
   "servings": 2,
   "ingredients": [
@@ -633,7 +633,7 @@
   "time": "10 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/Greek-Yogurt-Parfait.jpg",
+  "image": "../images/Greek-Yogurt-Parfait.jpg",
   "description": "Creamy yogurt layered with granola and fresh fruit",
   "servings": 2,
   "ingredients": [
@@ -663,7 +663,7 @@
   "time": "15 min",
   "difficulty": "Medium",
   "rating": 4.6,
-  "image": "./images/Vegetable-Omelette.jpg",
+  "image": "../images/Vegetable-Omelette.jpg",
   "description": "Fluffy omelette packed with fresh vegetables and cheese",
   "servings": 2,
   "ingredients": [
@@ -699,7 +699,7 @@
   "time": "12 min",
   "difficulty": "Easy",
   "rating": 4.9,
-  "image": "./images/Banana-Oatmeal.jpg",
+  "image": "../images/Banana-Oatmeal.jpg",
   "description": "Warm creamy oatmeal topped with bananas and cinnamon",
   "servings": 2,
   "ingredients": [
@@ -731,7 +731,7 @@
   "time": "25 min",
   "difficulty": "Medium",
   "rating": 4.8,
-  "image": "./images/Breakfast-Burrito.jpg",
+  "image": "../images/Breakfast-Burrito.jpg",
   "description": "Tortilla stuffed with scrambled eggs, veggies, and cheese",
   "servings": 2,
   "ingredients": [
@@ -767,7 +767,7 @@
   "time": "30 min",
   "difficulty": "Medium",
   "rating": 4.9,
-  "image": "./images/chicken-alfredo.jpg",
+  "image": "../images/chicken-alfredo.jpg",
   "description": "Creamy fettuccine pasta tossed with Alfredo sauce and grilled chicken",
   "servings": 4,
   "ingredients": [
@@ -803,7 +803,7 @@
   "time": "20 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/beef-stirfry.jpg",
+  "image": "../images/beef-stirfry.jpg",
   "description": "Tender beef strips stir-fried with fresh vegetables in soy sauce",
   "servings": 4,
   "ingredients": [
@@ -840,7 +840,7 @@
   "time": "35 min",
   "difficulty": "Medium",
   "rating": 4.6,
-  "image": "./images/vegetable-curry.jpg",
+  "image": "../images/vegetable-curry.jpg",
   "description": "A flavorful curry made with mixed vegetables and aromatic spices",
   "servings": 4,
   "ingredients": [
@@ -878,7 +878,7 @@
   "time": "25 min",
   "difficulty": "Easy",
   "rating": 4.8,
-  "image": "./images/shrimp-fried-rice.jpg",
+  "image": "../images/shrimp-fried-rice.jpg",
   "description": "Classic fried rice with shrimp, vegetables, and soy sauce",
   "servings": 4,
   "ingredients": [
@@ -916,7 +916,7 @@
   "time": "20 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/grilled-chicken-wrap.jpg",
+  "image": "../images/grilled-chicken-wrap.jpg",
   "description": "Healthy wrap with grilled chicken, veggies, and yogurt sauce",
   "servings": 2,
   "ingredients": [
@@ -950,7 +950,7 @@
   "time": "15 min",
   "difficulty": "Easy",
   "rating": 4.6,
-  "image": "./images/egg-salad-sandwich.jpg",
+  "image": "../images/egg-salad-sandwich.jpg",
   "description": "Classic creamy egg salad served on whole grain bread",
   "servings": 2,
   "ingredients": [
@@ -982,7 +982,7 @@
   "time": "10 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/chickpea-salad-bowl.jpg",
+  "image": "../images/chickpea-salad-bowl.jpg",
   "description": "Protein-packed salad with chickpeas, veggies, and lemon dressing",
   "servings": 2,
   "ingredients": [
@@ -1015,7 +1015,7 @@
   "time": "4 hours",
   "difficulty": "Medium",
   "rating": 4.9,
-  "image": "./images/strawberry-cheesecake.jpg",
+  "image": "../images/strawberry-cheesecake.jpg",
   "description": "Creamy cheesecake topped with fresh strawberries and glaze",
   "servings": 8,
   "ingredients": [
@@ -1050,7 +1050,7 @@
   "time": "1 hour",
   "difficulty": "Easy",
   "rating": 4.8,
-  "image": "./images/lemon-bars.jpg",
+  "image": "../images/lemon-bars.jpg",
   "description": "Tangy lemon filling on a buttery shortbread crust",
   "servings": 12,
   "ingredients": [
@@ -1085,7 +1085,7 @@
   "time": "2 hours",
   "difficulty": "Medium",
   "rating": 4.9,
-  "image": "./images/chocolate-mousse.jpg",
+  "image": "../images/chocolate-mousse.jpg",
   "description": "Rich and airy chocolate mousse with whipped cream",
   "servings": 4,
   "ingredients": [
@@ -1118,7 +1118,7 @@
   "time": "45 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/apple-crumble.jpg",
+  "image": "../images/apple-crumble.jpg",
   "description": "Warm baked apples with a crunchy oat topping",
   "servings": 6,
   "ingredients": [
@@ -1151,7 +1151,7 @@
   "time": "40 min",
   "difficulty": "Easy",
   "rating": 4.6,
-  "image": "./images/rice-pudding.jpg",
+  "image": "../images/rice-pudding.jpg",
   "description": "Creamy rice pudding with cinnamon and raisins",
   "servings": 4,
   "ingredients": [
@@ -1183,7 +1183,7 @@
   "time": "1 hour",
   "difficulty": "Medium",
   "rating": 4.8,
-  "image": "./images/pavlova.jpg",
+  "image": "../images/pavlova.jpg",
   "description": "Crispy meringue shell with a soft, marshmallow center",
   "servings": 8,
   "ingredients": [
@@ -1217,7 +1217,7 @@
   "time": "40 min",
   "difficulty": "Easy",
   "rating": 4.8,
-  "image": "./images/vegetarian-chili.jpg",
+  "image": "../images/vegetarian-chili.jpg",
   "description": "Hearty chili with beans, vegetables, and spices",
   "servings": 4,
   "ingredients": [
@@ -1255,7 +1255,7 @@
   "time": "50 min",
   "difficulty": "Medium",
   "rating": 4.7,
-  "image": "./images/stuffed-bell-peppers.jpg",
+  "image": "../images/stuffed-bell-peppers.jpg",
   "description": "Bell peppers stuffed with rice, beans, and vegetables",
   "servings": 4,
   "ingredients": [
@@ -1293,7 +1293,7 @@
   "time": "1 hour",
   "difficulty": "Medium",
   "rating": 4.8,
-  "image": "./images/vegetarian-lasagna.jpg",
+  "image": "../images/vegetarian-lasagna.jpg",
   "description": "Layers of pasta, vegetables, and cheese baked to perfection",
   "servings": 6,
   "ingredients": [
@@ -1330,7 +1330,7 @@
   "time": "20 min",
   "difficulty": "Easy",
   "rating": 4.7,
-  "image": "./images/vegetable-quesadilla.jpg",
+  "image": "../images/vegetable-quesadilla.jpg",
   "description": "Crispy tortilla filled with sautéed vegetables and cheese",
   "servings": 2,
   "ingredients": [
@@ -1362,7 +1362,7 @@
   "time": "10 min",
   "difficulty": "Easy",
   "rating": 4.8,
-  "image": "./images/caprese-salad.jpg",
+  "image": "../images/caprese-salad.jpg",
   "description": "Fresh tomatoes, mozzarella, and basil drizzled with olive oil",
   "servings": 2,
   "ingredients": [
@@ -1392,7 +1392,7 @@
   "time": "30 min",
   "difficulty": "Medium",
   "rating": 4.8,
-  "image": "./images/pad-thai.jpg",
+  "image": "../images/pad-thai.jpg",
   "description": "Classic Thai stir-fried rice noodles with vegetables, egg, and peanuts",
   "servings": 4,
   "ingredients": [

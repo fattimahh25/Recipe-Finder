@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - FlavorFind</title>
+  <link rel="stylesheet" href="./contact.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">🍳 FlavorFind</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/recipes.html">Recipes</a></li>
+        <li><a href="../pages/categories.html">Categories</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="log-sign-in.html">
+          <button class="sign-in-btn">Sign In</button>
+        </a>
+        <button class="menu-icon" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../pages/recipes.html">Recipes</a></li>
+      <li><a href="../pages/categories.html">Categories</a></li>
+      <li><a href="../pages/about.html">About</a></li>
+      <li><a href="../pages/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">Any questions or remarks? Just write us a message!</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <input type="email" id="email" placeholder="Enter a valid email address" required />
+          <input type="text" id="name" placeholder="Enter your Name" required />
+          <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="send-btn">Submit</button>
+           <p id="formMessage" style="color: green; margin-top: 0.5rem;"></p>
+
+        </form>
+      </div>
+
+      <!-- Info Boxes -->
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>🏃 About Club</h2>
+          <p>Running Guide</p>
+          <p>Workouts</p>
+        </div>
+        <div class="contact-info">
+          <h2>📞 Phone (Landline)</h2>
+          <p>+92 3 567 8987</p>
+          <p>+92 5 252 3336</p>
+        </div>
+        <div class="contact-info">
+          <h2>📍 Our Office Location</h2>
+          <p>The Interior Design Studio Company</p>
+          <p>The Courtyard, Al Quoz 1, Colorado, USA</p>
+        </div>
+      </div>
+      <div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9080123456!2d67.0012345!3d24.8607345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUxJzM4LjYiTiA2N8KwMDAnMDIuNiJF!5e0!3m2!1sen!2s!4v1692029142345"
+    width="100%"
+    height="400"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+    </div>
+  </section>
+
+ <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-title">🍳 FlavorFind</div>
+            <p style="color: #9ca3af">
+              Discover amazing recipes from around the world.
+            </p>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./pages/recipes.html">Recipes</a></li>
+              <li><a href="./pages/categories.html">Categories</a></li>
+              <li><a href="./pages/about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-subtitle">Follow Us</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem">
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📘 Facebook</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >📷 Instagram</a
+              >
+              <a href="#" style="color: #9ca3af; text-decoration: none"
+                >🐦 Twitter</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 FlavorFind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+
+    // Contact form handler
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("formMessage").textContent = "✅ Thank you! Your message has been sent.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
